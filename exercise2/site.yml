@@ -1,0 +1,15 @@
+---
+
+- name: install and start apache
+  hosts: web
+  become: yes
+
+  tasks:
+    - name: install httpd
+      package: name=httpd state=present
+
+    - name: write the apache config file
+      template: src=httpd.conf.j2 dest=/etc/httpd.conf
+
+    - name: start http
+      service: name=httpd state=started

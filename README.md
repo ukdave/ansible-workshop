@@ -18,3 +18,5 @@ These exercises have been tested on macOS Sierra with Vagrant 1.9.8 and Ansible 
 
 
 ## Exercices
+
+*   [Exercise 1: Ad-hoc commands](exercise1/README.md)
