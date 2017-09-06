@@ -1,0 +1,10 @@
+---
+
+- name: install apache
+  package: name=httpd state=present
+
+- name: start apache
+  service: name=httpd state=started enabled=yes
+
+- name: add index page
+  template: src=index.html.j2 dest=/var/www/html/index.html

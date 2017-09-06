@@ -1,0 +1,13 @@
+---
+
+- hosts: webservers
+  become: yes
+  roles:
+    - common
+    - apache
+
+- hosts: loadbalancers
+  become: yes
+  roles:
+    - common
+    - haproxy

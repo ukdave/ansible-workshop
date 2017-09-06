@@ -1,0 +1,4 @@
+---
+
+- name: install libselinux-python
+  package: name=libselinux-python state=present

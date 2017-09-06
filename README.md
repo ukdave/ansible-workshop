@@ -22,3 +22,4 @@ These exercises have been tested on macOS Sierra with Vagrant 1.9.8 and Ansible 
 *   [Exercise 1: Ad-hoc commands](exercise1/README.md)
 *   [Exercise 2: Playbooks](exercise2/README.md)
 *   [Exercise 3: Playbook and Roles](exercise3/README.md)
+*   [Exercise 4: More Playbooks and Roles](exercise4/README.md)
