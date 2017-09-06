@@ -1,0 +1,10 @@
+[loadbalancers]
+lb1  ansible_host=192.168.10.10
+
+[webservers]
+web1 ansible_host=192.168.10.11
+web2 ansible_host=192.168.10.12
+
+[all:vars]
+ansible_user=vagrant
+ansible_ssh_private_key_file=~/.vagrant.d/insecure_private_key

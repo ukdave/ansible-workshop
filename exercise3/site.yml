@@ -1,0 +1,20 @@
+---
+
+- name: install and start apache
+  hosts: webservers
+  become: yes
+
+  tasks:
+    - name: install libselinux-python
+      package: name=libselinux-python state=present
+
+    - name: install apache
+      package: name=httpd state=present
+
+    - name: start apache
+      service: name=httpd state=started enabled=yes
+
+    - name: add index page
+      copy:
+        content: "<h1>Hello from {{ ansible_hostname }} running on {{ ansible_distribution }}!</h1>"
+        dest: /var/www/html/index.html
