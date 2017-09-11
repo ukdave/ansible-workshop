@@ -1,0 +1,25 @@
+require "rake"
+require "rspec/core/rake_task"
+
+task spec: "spec:all"
+task default: :spec
+
+namespace :spec do
+  targets = []
+  Dir.glob("./spec/**/*_spec.rb").each do |file|
+    host = /(.*)_spec.rb/.match(File.basename(file))[1]
+    targets << host
+  end
+
+  task all: targets
+  task default: :all
+
+  targets.each do |target|
+    desc "Run serverspec tests to #{target}"
+    RSpec::Core::RakeTask.new(target.to_sym) do |t|
+      ENV["TARGET_HOST"] = target
+      t.pattern = "#{target}_spec.rb"
+      t.verbose = false
+    end
+  end
+end
