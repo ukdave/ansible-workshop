@@ -28,7 +28,7 @@ Create the file `roles/apache/tasks/main.yml` and copy the remaining tasks from 
 The contents of `index.html` is currently hard coded as a string in the task definition. Lets pull it out into a
 template. Create the file `roles/apache/templates/index.html.j2` with the following content:
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <head>
@@ -42,7 +42,7 @@ template. Create the file `roles/apache/templates/index.html.j2` with the follow
 
 Now change the `copy` task to use the `template` module instead:
 
-```
+```yaml
 template: src=index.html.j2 dest=/var/www/html/index.html
 ```
 

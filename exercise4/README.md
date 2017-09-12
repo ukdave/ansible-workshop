@@ -30,7 +30,7 @@ We should now have the following files inside `roles/common/tasks/` directory:
 
 Update the `main.yml` file so that includes the other two files:
 
-```
+```yaml
 ---
 
 - include: selinux.yml
@@ -39,7 +39,7 @@ Update the `main.yml` file so that includes the other two files:
 
 In the `ntp.yml` file add tasks to install and configure the `ntp` package:
 
-```
+```yaml
 - name: install ntp
   package: name=ntp state=present
 
@@ -80,7 +80,7 @@ rendered. As we want all our servers to synchronise to the same time server lets
 
 Create the file `group_vars/all` with the following content:
 
-```
+```yaml
 ---
 
 ntp_server: 0.pool.ntp.org
@@ -93,7 +93,7 @@ includes a line to notify a handler called `restart ntp`.
 
 Create the file `roles/handlers/main.yml` with the following content:
 
-```
+```yaml
 ---
 
 - name: restart ntp
@@ -105,7 +105,7 @@ Create the file `roles/handlers/main.yml` with the following content:
 
 Run the playbook to install and configure the NTP daemon:
 
-```
+```bash
 ansible-playbook site.yml -i hosts
 ```
 
@@ -128,7 +128,7 @@ servers.
 
 Create a new role called `haproxy` and add the following tasks:
 
-```
+```yaml
 ---
 
 - name: install haproxy

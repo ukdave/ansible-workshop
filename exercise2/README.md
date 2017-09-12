@@ -4,7 +4,7 @@ Write a playbook that will install Apache on both web servers and add some conte
 
 You can run your playbook with this command:
 
-```
+```bash
 ansible-playbook site.yml -i hosts
 ```
 
@@ -36,7 +36,7 @@ We need to replace the default test page with something else. We can do this by 
 
 The `copy` module has a `content` parameter which can set the content of the file directly to a specific value. E.g:
 
-```
+```yaml
 copy:
   content: "<h1>Hello from Ansible!</h1>"
   dest: /path/to/some/file
