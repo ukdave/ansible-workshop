@@ -1,5 +1,7 @@
 # Ansible Workshop
 
+Slides: <https://speakerdeck.com/ukdave/ansible-workshop>
+
 
 ## Requirements
 
