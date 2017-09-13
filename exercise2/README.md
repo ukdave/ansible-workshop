@@ -1,14 +1,6 @@
 # Exercise 2: Playbooks
 
-Write a playbook that will install Apache on both web servers and add some content.
-
-You can run your playbook with this command:
-
-```bash
-ansible-playbook site.yml -i hosts
-```
-
-You can access both web servers in your browser at <http://192.168.10.11> and <http://192.168.10.12>.
+__Objective__: Write a playbook that will install Apache on both web servers and add some content.
 
 
 ## Step 0: Rebuild vagrant VMs
@@ -25,6 +17,14 @@ and add some content.
 Use the `package` module to install the `httpd` package.
 
 Use the `service` module to ensure `httpd` is started.
+
+You can run your playbook with this command:
+
+```bash
+ansible-playbook site.yml -i hosts
+```
+
+You can access both web servers in your browser at <http://192.168.10.11> and <http://192.168.10.12>.
 
 Move on to the next step when you can see the "_Apache 2 Test Page_" in your browser.
 

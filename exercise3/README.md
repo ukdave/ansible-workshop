@@ -1,6 +1,7 @@
 # Exercise 3: Playbooks and Roles
 
-Take the list of tasks in the site.yml playbook and split them into a `common` role and an `apache` role.
+__Objective__: Take the list of tasks in the site.yml playbook and split them into a `common` role and an `apache`
+role.
 
 
 ## Step 0: Rebuild vagrant VMs

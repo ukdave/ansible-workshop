@@ -1,7 +1,7 @@
 # Exercise 4: More Playbooks and Roles
 
-Update the `common` role and get it to install and configure NTP, and then create a new role to install HAProxy on the
-load balancer server.
+__Objective__: Update the `common` role and get it to install and configure NTP, and then create a new role to install
+HAProxy on the load balancer server.
 
 
 ## Step 0: Rebuild vagrant VMs

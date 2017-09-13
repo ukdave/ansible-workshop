@@ -78,7 +78,7 @@ We can use Ansible's `package` module to install packages. Root privileges are t
 packages so we need to use the `-b` option to use privilege escalation. Try the command with and without the `-b`
 option to see what happens.
 
-```
+```bash
 ansible webservers -i hosts -m package -a "name=httpd state=present" -b
 ```
 
@@ -87,7 +87,7 @@ once. Try running the same command again to to install Apache, but notice that t
 
 Now try uninstalling Apache by changing the state to `absent`:
 
-```
+```bash
 ansible webservers -i hosts -m package -a "name=httpd state=absent" -b
 ```
 

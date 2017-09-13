@@ -1,12 +1,13 @@
 # Exercise 5: Testing with Serverspec
 
-Use [Serverspec](http://serverspec.org/) to test the VMs are configured correctly.
+__Objective__: Use [Serverspec](http://serverspec.org/) to test the VMs are configured correctly.
 
 
 ## Step 0: Rebuild vagrant VMs
 
 Before we get going, rebuild the Vagrant VMs by running `vagrant destroy` and then `vagrant up` to ensure they are in a
 clean state.
+
 
 ## Step 1: Install Serverspec
 
@@ -18,7 +19,7 @@ Serverspec is a Ruby tool for testing your servers. The following files and dire
 *   `Rakefile` - like Makefiles, but for Ruby
 *   `spec/` - directory containing all our tests
 
-Assuming you have a working Ruby installation, run `bundle install` to install the the gems listed in the Gemfile.
+Assuming you have a working Ruby installation, run `bundle install` to install the gems listed in the Gemfile.
 
 Runnning `rake` will run all the tests in the spec directory:
 
