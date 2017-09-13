@@ -57,7 +57,7 @@ In the `ntp.yml` file add tasks to install and configure the `ntp` package:
 We're going to use a template to configure the NTP daemon and use a variable to specify the NTP server that we want to
 synchronise to.
 
-Create the file `roles/common/templates/ntpd.conf.j2` with the following content:
+Create the file `roles/common/templates/ntp.conf.j2` with the following content:
 
 ```
 driftfile /var/lib/ntp/drift
@@ -91,7 +91,7 @@ ntp_server: 0.pool.ntp.org
 Finally, we want to make sure the NTP daemon is restarted if the config file is changed. Our template task already
 includes a line to notify a handler called `restart ntp`.
 
-Create the file `roles/handlers/main.yml` with the following content:
+Create the file `roles/common/handlers/main.yml` with the following content:
 
 ```yaml
 ---
