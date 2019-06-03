@@ -7,18 +7,18 @@ Slides: <https://speakerdeck.com/ukdave/ansible-workshop>
 
 These exercises make use of Vagrant to create a number of virtual machines which we will configure using Ansible.
 
-1.  Install Ansible (using Homebrew on Mac OS X):  
+1.  Install Ansible (using Homebrew on Mac OS X):
     `brew install ansible`
 
-2.  Install Vagrant:  
+2.  Install Vagrant:
     <https://www.vagrantup.com/downloads.html>
 
-3.  Install Proxy Configuration Plugin for Vagrant (optional):  
+3.  Install Proxy Configuration Plugin for Vagrant (optional):
     `vagrant plugin install vagrant-proxyconf`
 
 4.  Install Ruby (only required for exercise5 - optional)
 
-These exercises have been tested on macOS Sierra with Vagrant 1.9.8, Ansible 2.3.2.0, and Ruby 2.4.1.
+These exercises have been tested on macOS Mojave with Vagrant 2.2.4, Ansible 2.8.0, and Ruby 2.6.3.
 
 
 ## Exercices
