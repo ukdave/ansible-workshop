@@ -5,6 +5,10 @@ Vagrant.configure("2") do |config|
   config.vm.box = "centos/7"
   config.ssh.insert_key = false
 
+  config.vm.provider "virtualbox" do |v|
+    v.linked_clone = true
+  end
+
   if Vagrant.has_plugin?("vagrant-proxyconf")
     config.proxy.http = ENV["http_proxy"]
     config.proxy.https = ENV["https_proxy"]
