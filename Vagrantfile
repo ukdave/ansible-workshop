@@ -9,6 +9,10 @@ Vagrant.configure("2") do |config|
     v.linked_clone = true
   end
 
+  if Vagrant.has_plugin?("vagrant-vbguest")
+    config.vbguest.auto_update = false
+  end
+
   if Vagrant.has_plugin?("vagrant-proxyconf")
     config.proxy.http = ENV["http_proxy"]
     config.proxy.https = ENV["https_proxy"]
