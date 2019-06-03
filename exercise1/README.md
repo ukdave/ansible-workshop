@@ -1,9 +1,9 @@
 # Exercise 1: Ad-Hoc Commands
 
 Start the Vagrant VMs using the `vagrant up` command. This may take a few minutes the very first time as Vagrant
-downloads the CentOS 6 box.
+downloads the CentOS 7 box.
 
-This will create three CentOS 6 virtual machines:
+This will create three CentOS 7 virtual machines:
 
 *   `lb1` on `192.168.10.10`
 *   `web1` on `192.168.10.11`
@@ -62,9 +62,9 @@ web1 | SUCCESS => {
         ],
 ...
         "ansible_distribution": "CentOS",
-        "ansible_distribution_major_version": "6",
-        "ansible_distribution_release": "Final",
-        "ansible_distribution_version": "6.9",
+        "ansible_distribution_major_version": "7",
+        "ansible_distribution_release": "Core",
+        "ansible_distribution_version": "7",
 ...
     },
     "changed": false
