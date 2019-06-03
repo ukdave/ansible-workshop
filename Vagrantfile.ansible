@@ -1,0 +1,36 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+  config.vm.box = "centos/7"
+  config.ssh.insert_key = false
+
+  config.vm.provider "virtualbox" do |v|
+    v.linked_clone = true
+  end
+
+  config.vagrant.plugins = "vagrant-vbguest"
+  if Vagrant.has_plugin?("vagrant-vbguest")
+    config.vbguest.auto_update = true
+  end
+
+  if Vagrant.has_plugin?("vagrant-proxyconf")
+    config.proxy.http = ENV["http_proxy"]
+    config.proxy.https = ENV["https_proxy"]
+    no_proxy = %w[localhost 127.0.0.1 lb1 192.168.10.10 web1 192.168.10.11 web2 192.168.10.12]
+    config.proxy.no_proxy = (ENV["no_proxy"] || "").split(",").concat(no_proxy).uniq.join(",") if config.proxy.http
+  end
+
+  config.vm.define "ansible" do |cfg|
+    cfg.vm.hostname = "ansible"
+    cfg.vm.network "private_network", ip: "192.168.10.100"
+    cfg.vm.synced_folder ".", "/vagrant", type: "virtualbox"
+    cfg.vm.provision "file", source: "~/.vagrant.d/insecure_private_key",
+                             destination: "/home/vagrant/.vagrant.d/insecure_private_key"
+    cfg.vm.provision "shell", inline: <<~EOF
+      chmod 400 /home/vagrant/.vagrant.d/insecure_private_key
+      ln -s /vagrant exercises
+      yum -y install ansible vim
+    EOF
+  end
+end

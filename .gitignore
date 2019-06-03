@@ -3,3 +3,4 @@
 
 ### Vagrant ###
 .vagrant/
+.vagrant-ansible/
