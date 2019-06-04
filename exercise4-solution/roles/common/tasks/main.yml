@@ -1,4 +1,4 @@
 ---
 
-- include: selinux.yml
-- include: ntp.yml
+- import_tasks: selinux.yml
+- import_tasks: ntp.yml

@@ -33,8 +33,8 @@ Update the `main.yml` file so that includes the other two files:
 ```yaml
 ---
 
-- include: selinux.yml
-- include: ntp.yml
+- import_tasks: selinux.yml
+- import_tasks: ntp.yml
 ```
 
 In the `ntp.yml` file add tasks to install and configure the `ntp` package:
